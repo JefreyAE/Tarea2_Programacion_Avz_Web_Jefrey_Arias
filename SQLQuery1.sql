@@ -1,0 +1,1 @@
+﻿alter table buildings add building_name varchar(100);

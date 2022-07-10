@@ -1,0 +1,128 @@
+﻿@model Tarea2v1.Models.Building
+
+@{
+    ViewData["Title"] = "Detalles del edificio";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Detalles del edificio</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nombre del edificio
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.building_name)
+        </dd>
+        <dt class = "col-sm-2">
+            Tipo de propiedad
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.building_type)
+        </dd>
+        <dt class = "col-sm-2">
+            Provincia
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.province)
+        </dd>
+        <dt class = "col-sm-2">
+           Canton
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.canton)
+        </dd>
+        <dt class = "col-sm-2">
+           Distrito
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.disctrict)
+        </dd>
+        <dt class = "col-sm-2">
+            Capacidad
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.capacity)
+        </dd>
+        <dt class = "col-sm-2">
+            Fecha de registro
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.register_date)
+        </dd>
+        <dt class = "col-sm-2">
+            Fecha de finalización
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.final_date)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Editar", "Edit", new {  id = Model.id }) |
+    <a asp-action="Index">Regresar al listado de edificios</a>
+</div>
+
+@{
+     List<Tarea2v1.Models.Services> list = ViewBag.services;
+     List<Tarea2v1.Models.Services> list_services_building = ViewBag.services_building;
+}
+<hr/>
+<h4>Servicios asociados al edificio</h4>
+<hr/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Compañia que ofrece el servicio
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in list_services_building) {
+            <tr>
+                <td>
+                    @item.name
+                </td>
+                <td>
+                    @item.company_name
+                </td>
+            
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.id  }) |
+                    @Html.ActionLink("Delete", "Delete_Service", new { id=item.id, building_id = @Model.id})
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
+
+ <h4>Agrega un servicio</h4>
+    <hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddService">
+            <input type="hidden" name="building_id" value="@Model.id" class="form-control" />
+            <div class="form-group">
+                <label for="service" class="control-label">Selecciona un servicios:</label>
+                <select name="service_id" class="form-control">
+                    @foreach (var item in list)
+                    {
+                        <option value="@item.id">@item.name - @item.type - @item.company_name</option>
+                    }
+                </select>    
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Agregar servicio" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Tarea2v1.Models.Services>
+
+@{
+    ViewData["Title"] = "Listado de servicios";
+}
+
+<h1>Listado de servicios</h1>
+
+<p>
+    <a asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre del servicio
+            </th>
+            <th>
+                Tipo de servicio
+            </th>
+            <th>
+                Unidad de medida
+            </th>
+            <th>
+                Compañia que lo ofrece
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.company_name)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {  id=item.id  }) |   
+                @Html.ActionLink("Borrar", "Delete", new {  id=item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

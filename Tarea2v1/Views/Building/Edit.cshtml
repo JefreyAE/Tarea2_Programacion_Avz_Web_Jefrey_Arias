@@ -1,0 +1,85 @@
+﻿@model Tarea2v1.Models.Building
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar edificio</h1>
+
+<h4>Edificio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label  class="control-label">Nombre del edificio:</label>
+                <input asp-for="building_name" class="form-control" />
+                <span asp-validation-for="building_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Capacidad</label>
+                <input asp-for="capacity" class="form-control" />
+                <span asp-validation-for="capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Fecha de adquisición:</label>
+                <input type="date" value="@Model.register_date"asp-for="register_date" class="form-control" />
+                <span asp-validation-for="register_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Fecha final:</label>
+                <input type="date" value="@Model.final_date" asp-for="final_date" class="form-control" />
+                <span asp-validation-for="final_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="province" class="control-label">Provincia</label>
+                <select id="province" asp-for="province" class="form-control">
+                    <option value="San José" selected>San José</option>
+                    <option value="Alajuela">Alajuela</option>
+                    <option value="Cartago">Cartago</option>
+                    <option value="Heredia">Heredia</option>
+                    <option value="Guanacaste">Guanacaste</option>
+                    <option value="Puntarenas">Puntarenas</option>
+                    <option value="Limón">Limón</option>
+                </select>
+                <span asp-validation-for="province" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="canton" class="control-label">Canton</label>
+                <select id="canton" asp-for="canton" class="form-control">
+
+                </select>
+                <span asp-validation-for="canton" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Distrito:</label>
+                <select id="disctrict" asp-for="disctrict" class="form-control">
+
+                </select> 
+                <span asp-validation-for="disctrict" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tipo de adquisición:</label>
+                <select asp-for="building_type" class="form-control">
+                    <option value="alquilado">Alquilado</option>
+                    <option value="adquirido">Adquirido</option>
+                </select>
+                <span asp-validation-for="building_type" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Regresar a la lista de edificios</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tarea2v1", "Tarea2v1\Tarea2v1.csproj", "{DD023FFB-8A87-42BB-94F0-C774027B0BDD}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFServiceBuilding", "WCFServiceBuilding\", "{E613F519-52DD-48A9-9C5A-05444476DC3E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62946"
+		Debug.AspNetCompiler.PhysicalPath = "WCFServiceBuilding\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62946\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62946"
+		Release.AspNetCompiler.PhysicalPath = "WCFServiceBuilding\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62946\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62946"
+		SlnRelativePath = "WCFServiceBuilding\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFServiceServices", "WCFServiceServices\", "{C9910437-C0CC-4D91-BA70-41076EB991F6}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62024"
+		Debug.AspNetCompiler.PhysicalPath = "WCFServiceServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62024\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62024"
+		Release.AspNetCompiler.PhysicalPath = "WCFServiceServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62024\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62024"
+		SlnRelativePath = "WCFServiceServices\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD023FFB-8A87-42BB-94F0-C774027B0BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD023FFB-8A87-42BB-94F0-C774027B0BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD023FFB-8A87-42BB-94F0-C774027B0BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD023FFB-8A87-42BB-94F0-C774027B0BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E613F519-52DD-48A9-9C5A-05444476DC3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E613F519-52DD-48A9-9C5A-05444476DC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E613F519-52DD-48A9-9C5A-05444476DC3E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E613F519-52DD-48A9-9C5A-05444476DC3E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C9910437-C0CC-4D91-BA70-41076EB991F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9910437-C0CC-4D91-BA70-41076EB991F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9910437-C0CC-4D91-BA70-41076EB991F6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9910437-C0CC-4D91-BA70-41076EB991F6}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {354E82AA-B794-40BA-B0DF-C698E98D2C79}
+	EndGlobalSection
+EndGlobal

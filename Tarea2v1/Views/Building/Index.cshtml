@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Tarea2v1.Models.Building>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado de edificios</h1>
+
+<p>
+    <a asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>      
+            <th>
+                Nombre del edificio
+            </th>
+            <th>
+                Tipo de propiedad
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.building_name)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.building_type)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {  id=item.id  }) |
+                @Html.ActionLink("Detalle", "Details", new {  id=item.id  }) |
+                @Html.ActionLink("Borrar", "Delete", new {  id=item.id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+﻿@model Tarea2v1.Models.Services
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar Servicio</h1>
+
+<h4>Servicio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+              <div class="form-group">
+                <label asp-for="name" class="control-label">Nombre del servicio:</label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="company_name" class="control-label">Nombre de la compañia:</label>
+                <input asp-for="company_name" class="form-control" />
+                <span asp-validation-for="company_name" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="type" class="control-label">Tipo de servicio:</label>
+                <select asp-for="type" class="form-control">
+                    <option value="@Model.type" selected>@Model.type</option>
+                    <option value="Electrico">Eléctrico</option>
+                    <option value="Agua">Agua</option>
+                    <option value="Internet">Internet</option>
+                    <option value="Telefonia fija">Telefonia fija</option>
+                    <option value="Telefonía ip">Telefonía ip</option>
+                    <option value="Telefonía celular">Telefonía celular</option>
+                    <option value="Servicios municipales">Servicios municipales</option>
+                </select>
+                <span asp-validation-for="type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="unit" class="control-label">Unidad de medida:</label>
+                <input asp-for="unit" class="form-control" />
+                <span asp-validation-for="unit" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Regresar a la lista de servicios</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
